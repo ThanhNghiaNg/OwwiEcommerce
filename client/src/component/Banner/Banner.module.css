@@ -1,0 +1,48 @@
+.banner {
+  position: relative;
+  margin-top: 1rem;
+}
+.banner img {
+  width: 100%;
+}
+
+.description {
+  position: absolute;
+  width: 30%;
+  top: 50%;
+  left: 5%;
+  transform: translate(0, -50%);
+  font-style: italic;
+}
+
+.description h4,
+h1 {
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-top: 0;
+}
+.description h4 {
+  color: var(--text-ligth-gray);
+  margin-bottom: 0.4em;
+}
+
+.description button {
+  font-style: italic;
+  padding: 0.5em 2em;
+}
+
+@media screen and (max-width: 1200px) {
+  .description h4 {
+    font-size: large;
+  }
+  .description h1 {
+    font-size: xx-large;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .description h4,
+  h1 {
+    display: none;
+  }
+}
