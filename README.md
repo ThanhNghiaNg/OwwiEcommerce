@@ -14,7 +14,7 @@ _Due to the poor quality of the free server, the initial loading time may be pro
 
 Owwi Ecommerce is a simple e-commerce site with some fundamental functionality for users at the Customer Site, such as item searching, item addition to carts, checkout (not actually payment), account information changes, password changes, account blocking, and can chat with admin or consultant.
 
-Administrators get access to a dashboard that displays recent transactions as well as quick revenue information. They can also add, remove, or change products. Any user may be deleted by admin (include the own aacount of admin).
+Administrators get access to a dashboard that displays recent transactions as well as quick revenue information. They can also add, remove, or change products. Any user may be deleted by admin (include the own account of admin).
 
 Through the Admin site, both the consultant and the administrator can chat with the customer.
 
