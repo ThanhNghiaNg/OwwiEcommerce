@@ -2,12 +2,12 @@ services:
   react-app:
     image: node:18-alpine
     container_name: secom_admin
-    working_dir: /usr/src/app
+    working_dir: /data
     volumes:
-      - jenkins_home:/usr/src/app
+      - jenkins_home:/data
     ports:
       - "7011:3001"
-    command: sh -c "pwd && ls -a && npm ci && npm start"
+    command: sh -c "pwd && ls -a && npm install && npm start"
 
 volumes:
   jenkins_home:
