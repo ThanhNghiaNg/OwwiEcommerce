@@ -2,11 +2,13 @@ services:
   react-app:
     image: node:18-alpine
     container_name: secom_admin
+    working_dir: /usr/src/app
     volumes:
-      - jenkins_home:/data
+      - jenkins_jenkins_home:/usr/src/app
     ports:
       - "7011:3001"
-    command: sh -c "rm -rf node_modules package-lock.json && npm install && npm start"
+    command: sh -c "npm ci && npm start"
+
 volumes:
   jenkins_home:
     external: true
