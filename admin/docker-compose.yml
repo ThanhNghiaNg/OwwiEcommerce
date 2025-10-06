@@ -6,7 +6,7 @@ services:
       - jenkins_home:/data
     ports:
       - "7011:3001"
-    command: sh -c "npm install && npm start"
+    command: sh -c "rm -rf node_modules package-lock.json && npm ci && npm start"
 volumes:
   jenkins_home:
     external: true
