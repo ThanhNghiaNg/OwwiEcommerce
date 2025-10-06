@@ -1,0 +1,12 @@
+services:
+  react-app:
+    image: node:18-alpine
+    container_name: secom_admin
+    volumes:
+      - jenkins_home:/data
+    ports:
+      - "7011:3001"
+    command: sh -c "npm install && npm start"
+volumes:
+  jenkins_home:
+    external: true
