@@ -10,3 +10,4 @@ services:
 volumes:
   jenkins_home:
     external: true
+    name: jenkins_jenkins_home
