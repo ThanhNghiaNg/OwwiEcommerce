@@ -4,7 +4,7 @@ services:
     container_name: secom_admin
     working_dir: /usr/src/app
     volumes:
-      - /var/jenkins_home/workspace/secom/admin:/usr/src/app
+      - jenkins_home:/usr/src/app
     ports:
       - "7011:3001"
     command: sh -c "pwd && ls -a && npm ci && npm start"
