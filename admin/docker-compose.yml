@@ -1,10 +1,17 @@
+version: "3.9"
+
 services:
   react-app:
     image: node:18-alpine
     container_name: secom_admin
     working_dir: /usr/src/app
+    user: root                    # đảm bảo có quyền đọc volume
     volumes:
-      - /var/jenkins_home/workspace/secom/admin:/usr/src/app
+      - jenkins_jenkins_home:/usr/src/app  # mount volume Jenkins
     ports:
-      - "7011:3001"
-    command: sh -c "pwd && ls -a && npm install && npm start"
+      - "7011:3000"
+    command: sh -c "cd workspace/secom/admin && npm ci && npm start"
+
+volumes:
+  jenkins_jenkins_home:
+    external: true
