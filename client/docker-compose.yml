@@ -1,0 +1,15 @@
+services:
+  react-app:
+    image: node:18-alpine
+    container_name: secom_client
+    user: root
+    working_dir: /usr/src/app
+    volumes:
+      - jenkins_jenkins_home:/usr/src/app    # mount volume Jenkins
+    ports:
+      - "7013:3000"
+    command: sh -c "cd workspace/secom/client && npm ci && npm run build && npm install -g serve && serve -s build -l 3000"
+
+volumes:
+  jenkins_jenkins_home:
+    external: true
