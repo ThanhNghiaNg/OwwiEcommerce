@@ -22,4 +22,4 @@ Through the Admin site, both the consultant and the administrator can chat with 
 
 - Client (Customer and Admin): ReactJs, WebSocket, Redux/Redux Toolkit, React Router, Bootstrap, Ant Design
 
-- Server: ExpressJs, Authentication (Session & Cookies), WebSocket, MongoDB (Database).
+- Server: ExpressJs, Authentication (Session & Cookies), WebSocket, MongoDB (Database)
