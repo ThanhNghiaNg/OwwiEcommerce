@@ -26,7 +26,7 @@ services:
     ports:
       - "5013:3000"
     command: >
-      sh -c "ls -lh workspace/secom/client && cd workspace/secom/client &&
+      sh -c "ls -lh workspace/secom && cd workspace/secom/client &&
              npm run build &&
              npm install -g serve &&
              serve -s build -l 3000"
