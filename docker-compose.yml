@@ -6,7 +6,7 @@ services:
     working_dir: /usr/src/app
     volumes:
       - jenkins_jenkins_home:/usr/src/app
-      # - /home/nghiant/projects/ce/secom:/data
+      - /home/nghiant/projects/ce/secom:/data
     ports:
       - "5011:3000"
     command: >
@@ -22,11 +22,11 @@ services:
     working_dir: /usr/src/app
     volumes:
       - jenkins_jenkins_home:/usr/src/app
-      # - /home/nghiant/projects/ce/secom:/data
+      - /home/nghiant/projects/ce/secom:/data
     ports:
       - "5013:3000"
     command: >
-      sh -c "cp /data/.env workspace/secom/client/.env && cd workspace/secom/client &&
+      sh -c "ls -lh /data && cp /data/.env workspace/secom/client/.env && cd workspace/secom/client &&
              npm run build &&
              npm install -g serve &&
              serve -s build -l 3000"
@@ -38,7 +38,7 @@ services:
     working_dir: /usr/src/app
     volumes:
       - jenkins_jenkins_home:/usr/src/app
-      # - /home/nghiant/projects/ce/secom:/data
+      - /home/nghiant/projects/ce/secom:/data
     ports:
       - "5012:5000"
     command: >
