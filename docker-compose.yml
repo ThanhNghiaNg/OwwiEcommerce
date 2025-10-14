@@ -11,6 +11,7 @@ services:
       - "5011:3000"
     command: >
       sh -c "cp /data/.env workspace/secom/admin/.env && cd workspace/secom/admin &&
+             npm install &&
              npm run build &&
              npm install -g serve &&
              serve -s build -l 3000"
@@ -27,6 +28,7 @@ services:
       - "5013:3000"
     command: >
       sh -c "ls -lh /data && cp /data/.env workspace/secom/client/.env && cd workspace/secom/client &&
+             npm install &&
              npm run build &&
              npm install -g serve &&
              serve -s build -l 3000"
