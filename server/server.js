@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 const session = require("express-session");
-const bcrypt = require("bcryptjs");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -14,6 +13,8 @@ const userRoutes = require("./routes/user");
 const adminRoutes = require("./routes/admin");
 
 require("dotenv").config();
+
+const PRODUCTION = process.env.NODE_ENV === "production";
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -36,9 +37,7 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
-const MONGODB_URI =
-  process.env.MONGODB_URI ||
-  "mongodb+srv://owwibookstore:owwibookstore@cluster0.o5luvip.mongodb.net/FUNiXAssignment03?retryWrites=true&w=majority";
+const MONGODB_URI = process.env.MONGODB_URI || "";
 
 const store = new MongoDBStore({
   uri: MONGODB_URI,
@@ -68,8 +67,9 @@ app.set("trust proxy", 1);
 // UNCOMMENT FOR DEVELOP
 app.use(
   cors({
-    origin: true,
+    origin: PRODUCTION ? FE_CLIENT_URL.split(",") : true,
     credentials: true,
+    methods: ["POST", "PUT", "PATCH", "DELETE", "GET"],
   })
 );
 
@@ -84,8 +84,8 @@ app.use(
     resave: false,
     store: store,
     cookie: {
-      // sameSite: "none", // UNCOMMENT FOR DEPLOY
-      // secure: true, // UNCOMMENT FOR DEPLOY
+      sameSite: PRODUCTION ? "none" : "lax", // UNCOMMENT FOR DEPLOY
+      secure: PRODUCTION, // UNCOMMENT FOR DEPLOY
       maxAge: 1000 * 60 * 60 * 24, // One day in milliseconds
     },
   })
