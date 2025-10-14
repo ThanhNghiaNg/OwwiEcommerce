@@ -6,7 +6,7 @@ services:
     working_dir: /usr/src/app
     volumes:
       - jenkins_jenkins_home:/usr/src/app
-      - /home/nghiant/projects/ce/secom:/usr/src/app/workspace/secom/admin
+      # - /home/nghiant/projects/ce/secom:/usr/src/app/workspace/secom/admin
     ports:
       - "5011:3000"
     command: >
@@ -22,7 +22,7 @@ services:
     working_dir: /usr/src/app
     volumes:
       - jenkins_jenkins_home:/usr/src/app
-      - /home/nghiant/projects/ce/secom:/usr/src/app/workspace/secom/client
+      # - /home/nghiant/projects/ce/secom:/usr/src/app/workspace/secom/client
     ports:
       - "5013:3000"
     command: >
@@ -38,7 +38,7 @@ services:
     working_dir: /usr/src/app
     volumes:
       - jenkins_jenkins_home:/usr/src/app
-      - /home/nghiant/projects/ce/secom:/usr/src/app/workspace/secom/server
+      # - /home/nghiant/projects/ce/secom:/usr/src/app/workspace/secom/server
     ports:
       - "5012:5000"
     command: >
