@@ -64,6 +64,11 @@ app.set("trust proxy", 1);
 // );
 
 // UNCOMMENT FOR DEVELOP
+console.log("Cors config: ", {
+    origin: PRODUCTION ? FE_CLIENT_URL.split(",") : true,
+    credentials: true,
+    methods: ["POST", "PUT", "PATCH", "DELETE", "GET"],
+  });
 app.use(
   cors({
     origin: PRODUCTION ? FE_CLIENT_URL.split(",") : true,
