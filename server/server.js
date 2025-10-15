@@ -64,7 +64,6 @@ app.set("trust proxy", 1);
 //   })
 // );
 
-const FE_CLIENT_URL = process.env.FE_CLIENT_URL || "";
 // UNCOMMENT FOR DEVELOP
 app.use(
   cors({
