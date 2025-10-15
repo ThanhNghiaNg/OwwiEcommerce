@@ -6,9 +6,10 @@ services:
     working_dir: /usr/src/app
     volumes:
       - jenkins_jenkins_home:/usr/src/app    # mount volume Jenkins
+      - /home/nghiant/projects/ce/secom:/data 
     ports:
       - "5012:5000"
-    command: sh -c "cd workspace/secom/server && npm ci && npm install -g serve && serve -s build -l 5000"
+    command: sh -c "cp /data/.env /usr/src/app/workspace/secom/server/.env && cd workspace/secom/server && npm ci && npm start"
 
 volumes:
   jenkins_jenkins_home:
