@@ -10,7 +10,7 @@ services:
     ports:
       - "5011:3000"
     command: >
-      sh -c "cp /data/.env workspace/secom/admin/.env && cd workspace/secom/admin &&
+      sh -c "cp /data/.env workspace/secom/admin/.env &&
              npm run build &&
              npm install -g serve &&
              serve -s build -l 3000"
