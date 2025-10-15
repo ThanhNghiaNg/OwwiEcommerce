@@ -11,6 +11,7 @@ services:
       - "5011:3000"
     command: >
       sh -c "cd workspace/secom/admin &&
+             npm ci &&
              npm run build &&
              npm install -g serve &&
              serve -s build -l 3000"
@@ -27,6 +28,7 @@ services:
       - "5013:3000"
     command: >
       sh -c "cd workspace/secom/client &&
+             npm ci &&
              npm run build &&
              npm install -g serve &&
              serve -s build -l 3000"
@@ -43,6 +45,7 @@ services:
       - "5012:5000"
     command: >
       sh -c "cd workspace/secom/server &&
+             npm ci &&
              npm install -g serve &&
              serve -s build -l 5000"
 
