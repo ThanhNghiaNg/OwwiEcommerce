@@ -111,6 +111,9 @@ app.use(authRoutes);
 app.use(shopRoutes);
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
+app.use("/health", (req, res, next) => {
+  res.send({ info: "This is OWWI Ecommerce Restful API" });
+});
 
 mongoose
   .connect(MONGODB_URI)
