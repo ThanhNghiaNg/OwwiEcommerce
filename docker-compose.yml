@@ -10,7 +10,7 @@ services:
     ports:
       - "5011:3000"
     command: >
-      sh -c "ls -lh . && cd workspace/secom/admin &&
+      sh -c "cd workspace/secom/admin &&
              npm run build &&
              npm install -g serve &&
              serve -s build -l 3000"
@@ -26,7 +26,7 @@ services:
     ports:
       - "5013:3000"
     command: >
-      sh -c "ls -lh . && cd workspace/secom/client &&
+      sh -c "cd workspace/secom/client &&
              npm run build &&
              npm install -g serve &&
              serve -s build -l 3000"
@@ -42,7 +42,7 @@ services:
     ports:
       - "5012:5000"
     command: >
-      sh -c "ls -lh . && cd workspace/secom/server &&
+      sh -c "cd workspace/secom/server &&
              npm install -g serve &&
              serve -s build -l 5000"
 
