@@ -5,10 +5,17 @@ services:
     user: root
     working_dir: /usr/src/app
     volumes:
-      - jenkins_jenkins_home:/usr/src/app    # mount volume Jenkins
+      - jenkins_jenkins_home:/usr/src/app           # mount volume Jenkins
+      - /home/nghiant/projects/ce/secom:/data       # mount thư mục chứa file .env
     ports:
       - "5013:3000"
-    command: sh -c "cd workspace/secom/client && npm ci && npm run build && npm install -g serve && serve -s build -l 3000"
+    command: sh -c "
+      cp /data/.env /usr/src/app/workspace/secom/client/.env &&
+      cd /usr/src/app/workspace/secom/client &&
+      npm ci &&
+      npm run build &&
+      npm install -g serve &&
+      serve -s build -l 3000"
 
 volumes:
   jenkins_jenkins_home:
