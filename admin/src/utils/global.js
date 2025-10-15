@@ -1,5 +1,5 @@
-export const serverUrl = "http://localhost:5000";
-export const orderDetailBaseUrl = "http://localhost:3000/order";
+export const serverUrl = process.env.REACT_APP_SERVER_URL || "http://localhost:5000";
+export const orderDetailBaseUrl = process.env.REACT_APP_ORDER_DETAIL_URL || "http://localhost:3000/order";
 // export const serverUrl = "https://simple-e-commerce-server.onrender.com";
 // export const orderDetailBaseUrl = "https://owwi-ecomerce.netlify.app/order";
 
